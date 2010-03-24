@@ -18,9 +18,8 @@ public class Main extends Activity implements OnClickListener{
         b.setOnClickListener(this);        
     }
     
-    
     public void onClick(View v) {
-    	Intent intent = new Intent(this, at.madxpert.Template.class);
+    	Intent intent = new Intent(this, at.madxpert.Workout.class);
     	startActivity(intent);
     }
 }

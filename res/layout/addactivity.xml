@@ -11,13 +11,14 @@
 </TextView>
 <EditText 
 	android:text="" 
-	android:id="@+id/edit" 
+	android:id="@+id/edit"
+	android:layout_toRightOf="@+id/label" 
 	android:layout_width="fill_parent" 
 	android:layout_height="wrap_content">
 </EditText>
 <Button android:text="@string/ok" 
  	android:id="@+id/ok" 
- 	android:layout_width="wrap_content" 
+ 	android:layout_width="fill_parent" 
  	android:layout_height="wrap_content"
  	android:layout_below="@+id/edit"
  	android:layout_alignParentRight="true">

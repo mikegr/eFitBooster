@@ -14,7 +14,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		db.execSQL("CREATE TABLE activity (_id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT)");
 		db.execSQL("CREATE TABLE workout (_id INTEGER PRIMARY KEY AUTOINCREMENT, done DATE)");
 		db.execSQL("CREATE TABLE sets (_id INTEGER PRIMARY KEY AUTOINCREMENT, workout INTEGER, activity INTEGER)");
-		
 	}
 
 	@Override

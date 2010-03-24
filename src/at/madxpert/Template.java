@@ -1,7 +1,4 @@
 package at.madxpert;
-
-import java.util.List;
-
 import android.R;
 import android.app.ListActivity;
 import android.content.ContentValues;
@@ -53,9 +50,7 @@ public class Template extends ListActivity implements OnClickListener, OnCreateC
 		public void onCreateContextMenu(ContextMenu menu, View v,
 			ContextMenuInfo menuInfo) {
 			super.onCreateContextMenu(menu, v, menuInfo);
-			
 			menu.add(ContextMenu.NONE, 0, 0, "Delete");
-			
 		}
 		
 		@Override
@@ -83,8 +78,6 @@ public class Template extends ListActivity implements OnClickListener, OnCreateC
 			setListAdapter(new SimpleCursorAdapter(this, R.layout.simple_list_item_1, cursor, 
 					new String[] {"name"},
 			 		new int[] {R.id.text1}));
-			
-			
 		}
 		
 		@Override
