@@ -14,12 +14,21 @@ public class Main extends Activity implements OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
-        Button b = (Button) findViewById(R.id.button);
+        Button b = (Button) findViewById(R.id.exercisesButton);
         b.setOnClickListener(this);        
+        b = (Button) findViewById(R.id.workoutButton);
+        b.setOnClickListener(this);
+        
     }
     
     public void onClick(View v) {
-    	Intent intent = new Intent(this, at.madxpert.Workout.class);
-    	startActivity(intent);
+    	if (v.getId() == R.id.exercisesButton) {
+    		Intent intent = new Intent(this, at.madxpert.Template.class);
+        	startActivity(intent);	
+    	}
+    	if (v.getId() == R.id.workoutButton) {
+    		Intent intent = new Intent(this, at.madxpert.Workout.class);
+        	startActivity(intent);
+    	}
     }
 }

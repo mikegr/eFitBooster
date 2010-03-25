@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    >
-<Button  
-    android:id="@+id/button"
-    android:layout_width="fill_parent" 
-    android:layout_height="fill_parent" 
-    android:text="@string/hello"
-    />
-</LinearLayout>
+<RelativeLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/mainLayout" 
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent" >
+	<ImageView 
+		android:id="@+id/imageView" 
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content"
+		android:src="@drawable/logo"
+		android:adjustViewBounds="true"
+		/>
+	<Button 
+		android:id="@+id/exercisesButton"
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content"
+		android:text="@string/exercises" 
+		android:layout_below="@+id/imageView" 
+		/>
+	<Button
+		android:id="@+id/workoutButton"
+		android:layout_height="wrap_content"
+		android:layout_width="fill_parent" 
+		android:text="@string/workout" 
+		android:layout_below="@+id/exercisesButton" 
+		/>
+</RelativeLayout>

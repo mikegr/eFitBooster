@@ -25,6 +25,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.AdapterView.OnItemClickListener;
 
 public class Workout extends ListActivity implements OnClickListener, OnDateSetListener {
 	
@@ -36,12 +37,13 @@ public class Workout extends ListActivity implements OnClickListener, OnDateSetL
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		db = new DatabaseHelper(this).getWritableDatabase();
-		setContentView(R.layout.template);
+		setContentView(R.layout.workout);
 		
 		ListView view = (ListView) findViewById(android.R.id.list);
 		registerForContextMenu(view);
 		
 		updateList();
+		db.rawQuery("INSERT INTO activity (name) VALUES (?)", new String[] {"Exercise 1"});
 	}
 	
 	public void updateList() {
@@ -53,12 +55,18 @@ public class Workout extends ListActivity implements OnClickListener, OnDateSetL
 	}
 	
 	@Override
+	/**
+	 * Creates the context menu
+	 */
 	public void onCreateContextMenu(ContextMenu menu, View v,
 		ContextMenuInfo menuInfo) {
 		super.onCreateContextMenu(menu, v, menuInfo);
 		menu.add(ContextMenu.NONE, 0, 0, "Delete");
 	}
 	
+	/**
+	 * Reacts on context menu clicks
+	 */
 	@Override
 	public boolean onContextItemSelected(MenuItem item) {
 		Log.v(TAG, "ContextMenu called");
@@ -71,6 +79,9 @@ public class Workout extends ListActivity implements OnClickListener, OnDateSetL
 		return super.onContextItemSelected(item);
 	}
 	
+	/**
+	 * Reacts on add button
+	 */
 	public void onClick(android.view.View arg0) {
 		
 		Calendar cal = GregorianCalendar.getInstance();
@@ -81,6 +92,9 @@ public class Workout extends ListActivity implements OnClickListener, OnDateSetL
 		*/		
 	};
 	
+	/**
+	 * Reacts on DatePicker 
+	 */
 	public void onDateSet(DatePicker view, int year, int monthOfYear,
 			int dayOfMonth) {
 		Calendar cal = GregorianCalendar.getInstance(); 
@@ -95,5 +109,14 @@ public class Workout extends ListActivity implements OnClickListener, OnDateSetL
 		updateList();
 	}
 	
-
+	@Override
+	protected void onListItemClick(ListView l, View v, int position, long id) {
+		// TODO Auto-generated method stub
+		super.onListItemClick(l, v, position, id);
+		Intent i = new Intent(this, WorkoutContent.class);
+		i.putExtra("workout", (int) id);
+		startActivity(i);
+	}
+	
+	
 }

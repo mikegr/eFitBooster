@@ -23,7 +23,9 @@
         <activity android:name=".AddWorkout"
                   android:label="@string/app_name">
         </activity>
-        
+        <activity android:name=".WorkoutContent"
+                  android:label="@string/app_name">
+        </activity>
         
 
     </application>

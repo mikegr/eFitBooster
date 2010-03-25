@@ -21,6 +21,7 @@ public class AddActivity extends Activity implements OnClickListener {
 		setContentView(R.layout.addactivity);
 		Button ok = (Button) findViewById(R.id.ok);
 		ok.setOnClickListener(this);
+		
 	}
 	
 	public void onClick(View v) {

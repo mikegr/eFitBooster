@@ -27,6 +27,7 @@ public class Template extends ListActivity implements OnClickListener, OnCreateC
 		private SQLiteDatabase db;
 		@Override
 		protected void onCreate(Bundle savedInstanceState) {
+			Log.v(TAG, "onCreate");
 			super.onCreate(savedInstanceState);
 			setContentView(at.madxpert.R.layout.template);
 			
@@ -37,13 +38,11 @@ public class Template extends ListActivity implements OnClickListener, OnCreateC
 			
 			Button button = (Button) findViewById(at.madxpert.R.id.button);
 			button.setOnClickListener(this);
-			db.execSQL("DELETE FROM activity");	
 			
 			updateList();
 			
 			ListView list = (ListView) findViewById(R.id.list);
 			registerForContextMenu(list); // or list.setOnCreateContextMenuListener(this);
-		
 		}
 		
 		@Override
@@ -91,6 +90,23 @@ public class Template extends ListActivity implements OnClickListener, OnCreateC
 				db.insert("activity", null, values);
 				updateList();
 			}
+		}
+		
+		@Override
+		/**
+		 * Called by clicking on list item
+		 */
+		protected void onListItemClick(ListView l, View v, int position, long id) {
+			// 	TODO Auto-generated method stub
+			super.onListItemClick(l, v, position, id);
+			Log.v(TAG, "onListItemClick");
+			if (getIntent().getBooleanExtra("select", false)) {
+				Intent i = new Intent();
+				i.putExtra("activity", (int)id);
+				setResult(RESULT_OK, i);
+				finish();
+			}
+			
 		}
 		
 }

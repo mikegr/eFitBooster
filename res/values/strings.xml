@@ -5,4 +5,10 @@
     <string name="ok">OK</string>
     <string name="activity">Activity</string>
     <string name="name">Name</string>
+    <string name="exercises">Exercises</string>
+    <string name="workout">Workout</string>
+    <string name="addExercise">Add Exercise</string>
+    <string name="addWorkout">Add Workout</string>
 </resources>
+
+
