@@ -26,6 +26,9 @@
         <activity android:name=".WorkoutContent"
                   android:label="@string/app_name">
         </activity>
+        <activity android:name=".AdjustView"
+                  android:label="@string/app_name">
+        </activity>
         
 
     </application>

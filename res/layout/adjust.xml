@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="wrap_content" android:layout_height="wrap_content">
+
+	<TextView 
+		android:id="@+id/name"
+		android:text=""
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:textSize="5mm" 
+		android:padding="3mm"
+		android:layout_centerHorizontal="true"
+		>
+	</TextView>
+	<TextView 
+		android:id="@+id/textRepeats"
+		android:text="@string/repeats" 
+		android:layout_height="wrap_content" 
+		android:layout_width="wrap_content"
+		android:layout_below="@id/name"
+		>
+	</TextView>
+	<EditText 
+		android:id="@+id/editRepeats"
+		android:text="" 
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentRight="true" 
+		android:layout_alignBaseline="@id/textRepeats"
+		android:layout_below="@id/name"
+		android:layout_toRightOf="@id/textRepeats"		
+		android:inputType="number"
+		android:maxLength="3"
+		>
+	</EditText>
+	<TextView 
+		android:id="@+id/textWeight"
+		android:text="@string/weight"
+		android:layout_height="wrap_content" 
+		android:layout_width="wrap_content"
+		android:layout_below="@id/editRepeats"
+		>
+	</TextView>
+	<EditText 
+		android:id="@+id/editWeight"
+		android:text=""
+		android:layout_height="wrap_content" 
+		android:layout_width="wrap_content"
+		android:layout_alignParentRight="true"
+		android:layout_below="@id/editRepeats"
+		android:layout_toRightOf="@id/textWeight"
+		android:layout_alignBaseline="@id/textWeight"
+		android:inputType="number"
+		android:maxLength="3"
+		>
+	</EditText>
+	<Button 
+		android:id="@+id/okButton"
+		android:text="@string/ok" 
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content"
+		android:layout_centerHorizontal="true"
+		android:layout_below="@id/editWeight"
+		>
+	</Button>
+		
+</RelativeLayout>

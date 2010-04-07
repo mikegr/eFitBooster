@@ -109,4 +109,11 @@ public class Template extends ListActivity implements OnClickListener, OnCreateC
 			
 		}
 		
+		@Override
+		protected void onDestroy() {
+		// TODO Auto-generated method stub
+			super.onDestroy();
+			db.close();
+		}
+		
 }

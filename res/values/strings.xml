@@ -9,6 +9,8 @@
     <string name="workout">Workout</string>
     <string name="addExercise">Add Exercise</string>
     <string name="addWorkout">Add Workout</string>
+    <string name="repeats">Repeats</string>
+    <string name="weight">Weight</string>
 </resources>
 
 

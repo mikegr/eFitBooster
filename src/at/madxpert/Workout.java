@@ -118,5 +118,13 @@ public class Workout extends ListActivity implements OnClickListener, OnDateSetL
 		startActivity(i);
 	}
 	
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+		db.close();
+	}
+	
+	
 	
 }
